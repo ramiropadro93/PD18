@@ -28,6 +28,8 @@
 <p> Desde GHCI ir a C:\path\to\file>MoveTheBox.hs <p>
 <p> Funcion main y se carga el juego.</p>
 
+<h2>Modificaciones</h2>
+
 <h4> Items a agregar: </h4>
 <ul>
   <li> Sistema de niveles.</li>
