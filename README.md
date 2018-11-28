@@ -40,4 +40,6 @@
   <li> Autogenerador de niveles.</li>
   <li> Tomar los controles automáticamente. (sin tener que presionar enter) </li>
   <li> Limpiar pantalla en cada movimiento. </li>
+  <li> Reiniciar nivel / juego con tecla R.</li>
+  <li> Salir del juego con Escape.</li>
 <ol>
