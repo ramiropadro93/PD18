@@ -28,6 +28,13 @@
 <p> Desde GHCI ir a C:\path\to\file>MoveTheBox.hs <p>
 <p> Funcion main y se carga el juego.</p>
 
+<h4> Items a agregar: </h4>
+<ul>
+  <li> Sistema de niveles.</li>
+  <li> Colisiones con paredes</li>
+  
+</ul>
+
 <h4> Posibles nuevo features: </h4>
 <ol>
   <li> Interfaz gráfica integrando Haskell con OpenGL.</li>
