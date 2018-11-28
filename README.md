@@ -32,3 +32,10 @@
 
 <p>Mi objetivo para este proyecto fue poder practicar lo aprendido en clase sobre el lenguaje Haskell. Además la idea de comenzar un proyecto desde cero y afrontar los múltiples problemas que se fueron dando me ayudó a entender aún mejor muchas características del lenguaje que no conocía.</p>
 <p> Antes de comenzar a desarrollar, decidí hacer un modelo del proyecto a afrontar. Parecía que iba a ser algo no muy complicado pero cuando empecé el desarrollo me di cuenta que no se iba a resolver tan fácilmente como había creído. El sistema de niveles no fue una tarea sencilla. Para el desarrollo de un único nivel, la tarea era fácil pero al tener que ir cargando nuevos niveles, tuve que jugar un poco con listas para lograr terminarlo. Otra cosa que fue complicada fue desarrollar la función que generara los movimientos del personaje. Decidí que la mejor forma era volver a cargar el mapa con la nueva posición del jugador.</p>
+
+<h4> Posibles nuevo features: </h4>
+<ol>
+  <li>Interfaz gráfica integrando Haskell con OpenGL.</li>
+  <li>En caso de agregar interfaz gráfica -> agregar musicalizació.n</li>
+  <li>Autogenerador de niveles.</li>
+<ol>
