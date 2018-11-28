@@ -35,7 +35,9 @@
 
 <h4> Posibles nuevo features: </h4>
 <ol>
-  <li>Interfaz gráfica integrando Haskell con OpenGL.</li>
-  <li>En caso de agregar interfaz gráfica -> agregar musicalizació.n</li>
-  <li>Autogenerador de niveles.</li>
+  <li> Interfaz gráfica integrando Haskell con OpenGL.</li>
+  <li> En caso de agregar interfaz gráfica -> agregar musicalizació.n</li>
+  <li> Autogenerador de niveles.</li>
+  <li> Tomar los controles automáticamente. (sin tener que presionar enter) </li>
+  <li> Limpiar pantalla en cada movimiento. </li>
 <ol>
