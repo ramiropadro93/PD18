@@ -7,7 +7,7 @@ import System.IO (stdin, stdout, hSetEcho, hSetBuffering, BufferMode(..))
 type Coord = (Int, Int)
 
 data Map = Map  {wWalls
-                    ,wCrates
+                    ,wBoxes
                     ,wStorages   :: [Coord]
                     ,wWorker    :: Coord
                     ,wMax       :: Coord
@@ -15,7 +15,7 @@ data Map = Map  {wWalls
                     } deriving (Show)
 
 emptyMap = Map  {wWalls      = []
-                ,wCrates      = []
+                ,wBoxes      = []
                 ,wStorages   = [] 
                 ,wWorker     = (0,0)
                 ,wMax        = (0,0)
@@ -70,7 +70,7 @@ loadLevel str = foldl consume (emptyMap{wMax = maxi}) elems
             maxi    = (maxX,maxY)
             consume mapp (c,element) = case element of
                 'P' -> mapp{wWorker  = c}
-                'o' -> mapp{wCrates   = c:wCrates mapp}
+                'o' -> mapp{wBoxes   = c:wBoxes mapp}
                 '|' -> mapp{wWalls   = c:wWalls mapp}
                 '.' -> mapp{wStorages = c:wStorages mapp}
                 ' ' -> mapp
@@ -83,25 +83,28 @@ showMap w = putStrLn . unlines . map (map func) $ coords
     where   (maxX, maxY)    = wMax w
             coords          = [[(x,y) | x <- [0..maxX]] | y <- [0..maxY]]
             isWorker  w c   = wWorker w == c
-            func c          =
-                case () of ()   | isCrate w c && isStorage w c -> '*'
-                                | isWorker w c && isStorage w c -> 'P'
-                                | isWall w c        -> '|'
-                                | isWorker w c      -> 'P'
-                                | isCrate w c         -> 'o'
-                                | isStorage w c     -> '.'
-                                | otherwise         -> ' '
+            func c  | isBox     w c && isStorage w c    = '*'
+                    | isWorker  w c && isStorage w c    = 'P'
+                    | isWall    w c                     = '|'
+                    | isWorker  w c                     = 'P'
+                    | isBox     w c                     = 'o'
+                    | isStorage w c                     = '.'
+                    | otherwise                         = ' '
                 
 --funcion principal, maneja la modificacion del mapa con cada movimiento
 modifyMap :: Map -> Input -> Map
-modifyMap map input = 
-    case () of ()   | isCrate map newPos    -> moveCrate map' newPos newPos'
-                    | otherwise             -> map'
-    where   oldPos  = wWorker map
+modifyMap map input
+    | isWall    map newPos    = map'
+    | isBox   map newPos    =
+        if isBox map newPos' || isWall map newPos'
+            then map'
+            else moveBox map' newPos newPos'
+    | otherwise                 = map'
+    where   moveBox w old new = w{wBoxes = new:delete old (wBoxes map)}
+            oldPos  = wWorker map
             newPos  = add oldPos input
             newPos' = add newPos input
             map'  = map{wWorker = newPos, wSteps = wSteps map + 1}
-            moveCrate w old new = w{wCrates = new:delete old (wCrates map)}
 
 --ingreso de teclas
 getInput :: IO Input
@@ -119,8 +122,8 @@ isWall :: Map -> Coord -> Bool
 isWall map coord = elem coord (wWalls map) 
 
 --Encontré caja
-isCrate :: Map -> Coord -> Bool
-isCrate map coord = elem coord (wCrates map)
+isBox :: Map -> Coord -> Bool
+isBox map coord = elem coord (wBoxes map)
 
 --Punto de extraccion
 isStorage :: Map -> Coord -> Bool
@@ -128,7 +131,15 @@ isStorage map coord = elem coord (wStorages map)
 
 --Nivel terminado
 isFinished :: Map -> Bool
-isFinished map = sort (wCrates map) == sort (wStorages map)
+isFinished map = sort (wBoxes map) == sort (wStorages map)
+
+isValid :: Map -> Input -> Bool
+isValid map input | isWall    map newPos = False
+                    | isBox   map newPos = not(isBox map newPos') && not(isWall map newPos')
+                    | otherwise              = True
+    where   oldPos = wWorker map  
+            newPos  = add oldPos input
+            newPos' = add newPos input
 
 main :: IO()
 main = do
@@ -139,12 +150,12 @@ main = do
 
     gameLoop $ loadLevel level
 
---Loop de generacion del nivel
 gameLoop map = do
     showMap map
     input <- getInput
-    let map' = modifyMap map input
-
+    let map' = if isValid map input
+                    then modifyMap map input
+                    else map
     if isFinished map'
         then showMap map' >> print "GOOD JOB WORKER !!" 
         else gameLoop map'
