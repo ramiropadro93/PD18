@@ -1,5 +1,3 @@
-import Test.HUnit
-import Test.QuickCheck
 import Prelude hiding (Either(..))
 import Data.List (sort,delete)
 import System.IO (stdin, stdout, hSetEcho, hSetBuffering, BufferMode(..))
@@ -7,12 +5,12 @@ import System.IO (stdin, stdout, hSetEcho, hSetBuffering, BufferMode(..))
 type Coord = (Int, Int)
 
 data Map = Map  {wWalls
-                    ,wBoxes
-                    ,wStorages   :: [Coord]
-                    ,wWorker    :: Coord
-                    ,wMax       :: Coord
-                    ,wSteps     :: Int
-                    } deriving (Show)
+                ,wBoxes
+                ,wStorages   :: [Coord]
+                ,wWorker    :: Coord
+                ,wMax       :: Coord
+                ,wSteps     :: Int
+                } deriving (Show)
 
 emptyMap = Map  {wWalls      = []
                 ,wBoxes      = []
@@ -134,9 +132,9 @@ isFinished :: Map -> Bool
 isFinished map = sort (wBoxes map) == sort (wStorages map)
 
 isValid :: Map -> Input -> Bool
-isValid map input | isWall    map newPos = False
-                    | isBox   map newPos = not(isBox map newPos') && not(isWall map newPos')
-                    | otherwise              = True
+isValid map input   | isWall    map newPos  = False
+                    | isBox     map newPos  = not(isBox map newPos') && not(isWall map newPos')
+                    | otherwise             = True
     where   oldPos = wWorker map  
             newPos  = add oldPos input
             newPos' = add newPos input
