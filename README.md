@@ -30,20 +30,10 @@
 
 <h2>Modificaciones</h2>
 
-<h4> Items a agregar: </h4>
-<ul>
-  <li> Sistema de niveles.</li>
-  <li> Colisiones con paredes</li>
-  
-</ul>
-
 <h4> Posibles nuevo features: </h4>
 <ol>
-  <li> Interfaz gráfica integrando Haskell con OpenGL.</li>
-  <li> En caso de agregar interfaz gráfica -> agregar musicalizació.n</li>
-  <li> Autogenerador de niveles.</li>
-  <li> Tomar los controles automáticamente. (sin tener que presionar enter) </li>
-  <li> Limpiar pantalla en cada movimiento. </li>
-  <li> Reiniciar nivel / juego con tecla R.</li>
-  <li> Salir del juego con tecla.</li>
+  <li> Interfaz gráfica integrando Haskell con OpenGL. NO TERMINADO</li> 
+  <li> En caso de agregar interfaz gráfica -> agregar musicalización NO REALIZADO</li>
+  <li> Tomar los controles automáticamente. (sin tener que presionar enter) REALIZADO</li>
+  <li> Limpiar pantalla en cada movimiento. REALIZADO </li>
 <ol>
