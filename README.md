@@ -27,13 +27,3 @@
 
 <p> Desde GHCI ir a C:\path\to\file>MoveTheBox.hs <p>
 <p> Funcion main y se carga el juego.</p>
-
-<h2>Modificaciones</h2>
-
-<h4> Posibles nuevo features: </h4>
-<ol>
-  <li> Interfaz gráfica integrando Haskell con OpenGL. NO TERMINADO</li> 
-  <li> En caso de agregar interfaz gráfica -> agregar musicalización NO REALIZADO</li>
-  <li> Tomar los controles automáticamente. (sin tener que presionar enter) REALIZADO</li>
-  <li> Limpiar pantalla en cada movimiento. REALIZADO </li>
-<ol>
