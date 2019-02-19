@@ -1,29 +1,29 @@
 # PD18
-<h1>Trabajo Final: Programación Declarativa UBP 2018</h1>
+#Trabajo Final: Programación Declarativa UBP 2018
 
-<h2>Descripcion del proyecto </h2>
-<p>Para este trabajo final decidimos desarrollar un juego de consola estilo puzzle llamado MoveTheBox en el lenguaje de programación Haskell. </p>
+##Descripcion del proyecto
+Para este trabajo final decidimos desarrollar un juego de consola estilo puzzle llamado MoveTheBox en el lenguaje de programación Haskell. 
 
-<h2>Descripción del juego</h2>
+##Descripción del juego
 
-<h4>Objetivo</h4>
-<p>La idea del juego es llevar todas las cajas a los lugares de extraccion.</p>
+####Objetivo
+La idea del juego es llevar todas las cajas a los lugares de extraccion.
 
-<h4>Controles</h4>
-<p>Para mover el personaje, se utilizan las teclas: W(arriba) - S(abajo) - A(izquierda) - D(derecha)</p>
-<p>Para que el juego tome el movimiento hay que presionar Enter porque están cargados como Inputs.</p>
+####Controles
+Para mover el personaje, se utilizan las teclas: W(arriba) - S(abajo) - A(izquierda) - D(derecha)
+Para que el juego tome el movimiento hay que presionar Enter porque están cargados como Inputs.
 
-<h4>Desarrollo del juego</h4>
-<p>El juego comienza en un nivel básico y va dificultándose a medida que se avanza de nivel. Al llevar todas las cajas a los puntos de extraccion, el juego emite mensaje de felicitaciones y se autocarga el próximo nivel.</p>
+####Desarrollo del juego
+El juego comienza en un nivel básico y va dificultándose a medida que se avanza de nivel. Al llevar todas las cajas a los puntos de extraccion, el juego emite mensaje de felicitaciones y se autocarga el próximo nivel.
 
-<h4>Niveles</h4>
-<p>Los niveles se cargan de una lista de niveles preestablecidos.</p>
+####Niveles
+Los niveles se cargan de una lista de niveles preestablecidos.
 
-<h2>Como compilar</h2>
+##Como compilar
 
-<p>C:\path\to\file> ghc MoveTheBox.hs <p>
+C:\path\to\file> ghc MoveTheBox.hs 
   
-<h2> Como ejecutar </h2>
+##Como ejecutar
 
-<p> Desde GHCI ir a C:\path\to\file>MoveTheBox.hs <p>
-<p> Funcion main y se carga el juego.</p>
+Desde GHCI ir a C:\path\to\file>MoveTheBox.hs
+Funcion main y se carga el juego.
