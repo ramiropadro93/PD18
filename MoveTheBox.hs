@@ -144,7 +144,7 @@ main = do
   hSetBuffering stdin NoBuffering
   hSetBuffering stdout NoBuffering
 
-  levels <- loadLevels "sokoban_levels.txt"
+  levels <- loadLevels "levels.txt"
   forM_ (zip [1..] levels) $ \(n,l) -> do
-    putStrLn $ "\n\nLevel " ++ show n ++ ":"
+    putStrLn $ "Level " ++ show n ++ ":"
     gameLoop l
