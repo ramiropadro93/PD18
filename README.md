@@ -15,8 +15,14 @@ Para mover el personaje, se utilizan las teclas: W(arriba) - S(abajo) - A(izquie
 ####Desarrollo del juego
 El juego comienza en un nivel básico y va dificultándose a medida que se avanza de nivel. Al llevar todas las cajas a los puntos de extraccion, se autocarga el próximo nivel. En el caso de bloquear alguna de las cajas, se debe salir del mismo y comenzar desde el principio.
 
-####Niveles
+Niveles
 Los niveles se cargan de una lista de niveles preestablecidos.
+Los objetos dentro del nivel están representados por:
+- # : pared
+- o : caja
+- * : caja en punto de extraccion
+- . : punto de extraccion
+- P : jugador
 
 ##Como compilar
 
