@@ -17,6 +17,7 @@ El juego comienza en un nivel básico y va dificultándose a medida que se avanz
 
 #### Niveles
 Los niveles se cargan de una lista de niveles preestablecidos.
+
 Los objetos dentro del nivel están representados por:
 - pared : '#'
 - caja  : 'o'
