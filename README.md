@@ -1,5 +1,5 @@
 # PD18
-# Trabajo Final: Programación Declarativa UBP 2018
+# Trabajo Final: Programación Declarativa UBP 2019
 
 ## Descripcion del proyecto
 Para este trabajo final decidimos desarrollar un juego de consola estilo puzzle llamado MoveTheBox en el lenguaje de programación Haskell. 
