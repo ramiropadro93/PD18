@@ -10,11 +10,10 @@ Para este trabajo final decidimos desarrollar un juego de consola estilo puzzle 
 La idea del juego es llevar todas las cajas a los lugares de extraccion.
 
 ####Controles
-Para mover el personaje, se utilizan las teclas: W(arriba) - S(abajo) - A(izquierda) - D(derecha)
-Para que el juego tome el movimiento hay que presionar Enter porque están cargados como Inputs.
+Para mover el personaje, se utilizan las teclas: W(arriba) - S(abajo) - A(izquierda) - D(derecha).
 
 ####Desarrollo del juego
-El juego comienza en un nivel básico y va dificultándose a medida que se avanza de nivel. Al llevar todas las cajas a los puntos de extraccion, el juego emite mensaje de felicitaciones y se autocarga el próximo nivel.
+El juego comienza en un nivel básico y va dificultándose a medida que se avanza de nivel. Al llevar todas las cajas a los puntos de extraccion, se autocarga el próximo nivel. En el caso de bloquear alguna de las cajas, se debe salir del mismo y comenzar desde el principio.
 
 ####Niveles
 Los niveles se cargan de una lista de niveles preestablecidos.
@@ -27,3 +26,4 @@ C:\path\to\file> ghc MoveTheBox.hs
 
 Desde GHCI ir a C:\path\to\file>MoveTheBox.hs
 Funcion main y se carga el juego.
+
