@@ -19,7 +19,6 @@ data Map = Map  {wWalls
                 ,wStorages  :: [Coord]
                 ,wWorker    :: Coord
                 ,wMax       :: Coord
-                ,wSteps     :: Int
                 }
 
 emptyMap = Map  {wWalls    = []
@@ -27,7 +26,6 @@ emptyMap = Map  {wWalls    = []
                   ,wStorages = []
                   ,wWorker   = (0,0)
                   ,wMax      = (0,0)
-                  ,wSteps    = 0
                   }
 
 instance Show Map where
@@ -123,7 +121,7 @@ modifyMap map input
         oldPos  = wWorker map
         newPos  = add oldPos input
         newPos' = add newPos input
-        map'  = map{wWorker = newPos, wSteps = wSteps map + 1}
+        map'  = map{wWorker = newPos}
         
 --nivel terminado
 isFinished :: Map -> Bool
