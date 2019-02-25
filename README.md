@@ -51,4 +51,4 @@ Quedó una única tarea pendiente que es la opción de presionar una tecla para 
 
 [Aprende Haskell](http://aprendehaskell.es/content/EntradaSalida.html)
 
-[Inputs movimiento de personaje](https://github.com/anton-k/processing-for-haskell/blob/master/tutorial/UserInput.md)
+[Inputs movimiento de personaje](https://www.haskell.org/onlinereport/haskell2010/haskellch7.html)
