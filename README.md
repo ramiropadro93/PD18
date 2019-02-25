@@ -34,3 +34,16 @@ C:\path\to\file> ghc MoveTheBox.hs
 Desde GHCI ir a C:\path\to\file>MoveTheBox.hs
 Funcion main y se carga el juego.
 
+## Conclusión
+
+Nuestro objetivo para este proyecto era afianzar los conocimientos aprendidos en la materia y adquirir nuevos en el lenguaje de Haskell. Planteamos hacer un juego ya que antes habiamos desarrollado videojuegos en otros lenguajes, pensando que sería algo sencillo pero no fue tan fácil. 
+
+Tuvimos algunas dificultades en el manejo del mapa del juego, solucionados con funciones de control. El primer problema fue restringir el mapa de juego para que el personaje no pudiera atravesar las paredes. Luego de resolverlo tuvimos que hacer lo mismo para las cajas que tenian el mismo problema.
+Otro problema fue en tiempo de ejecución del juego. Cada vez que el jugador intentaba moverse debia presionar 'enter' para que el movimiento se realizara, lo cual era algo muy molesto.
+
+Quedó una única tarea pendiente que es la opción de presionar una tecla para reiniciar el juego, que no pudo ser solucionada aún. 
+
+## Referencias
+
+[Información sobre el juego](https://en.wikipedia.org/wiki/Sokoban)
+[Juego de sokoban online](http://www.game-sokoban.com)
