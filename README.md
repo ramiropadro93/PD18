@@ -48,3 +48,7 @@ Quedó una única tarea pendiente que es la opción de presionar una tecla para 
 [Información sobre el juego](https://en.wikipedia.org/wiki/Sokoban)
 
 [Juego de sokoban online](http://www.game-sokoban.com)
+
+[Aprende Haskell](http://aprendehaskell.es/content/EntradaSalida.html)
+
+[Inputs movimiento de personaje](https://github.com/anton-k/processing-for-haskell/blob/master/tutorial/UserInput.md)
