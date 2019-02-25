@@ -52,3 +52,5 @@ Quedó una única tarea pendiente que es la opción de presionar una tecla para 
 [Aprende Haskell](http://aprendehaskell.es/content/EntradaSalida.html)
 
 [Inputs movimiento de personaje](https://www.haskell.org/onlinereport/haskell2010/haskellch7.html)
+
+[Limpieza de pantalla](http://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO.html)
