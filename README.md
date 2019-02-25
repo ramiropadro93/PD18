@@ -46,4 +46,5 @@ Quedó una única tarea pendiente que es la opción de presionar una tecla para 
 ## Referencias
 
 [Información sobre el juego](https://en.wikipedia.org/wiki/Sokoban)
+
 [Juego de sokoban online](http://www.game-sokoban.com)
