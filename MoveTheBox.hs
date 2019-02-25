@@ -77,33 +77,33 @@ isWorker w c  = wWorker w == c
 loadLevels :: String -> IO [Map]
 loadLevels filename = do
   lns <- liftM lines . readFile $ filename
-  return $ unfoldr consume lns
+  return $ unfoldr draw lns
   where isEmptyLine = all (' '==)
-        consume [] = Nothing
-        consume ls = let (a,b) = break isEmptyLine ls
+        draw [] = Nothing
+        draw ls = let (a,b) = break isEmptyLine ls
                      in return (loadLevel $ unlines a, drop 1 b)
 
 --carga el nivel actual
 loadLevel :: String -> Map
-loadLevel str = foldl consume (emptyMap{wMax = maxi}) elems
+loadLevel str = foldl draw (emptyMap{wMax = maxi}) elems
   where lns     = lines str
         coords  = [[(x,y) | x <- [0..]] | y <- [0..]]
         elems   = concat $ zipWith zip coords lns
         maxX    = maximum . map (fst . fst) $ elems
         maxY    = maximum . map (snd . fst) $ elems
         maxi    = (maxX, maxY)
-        consume wld (c, elt) = 
+        draw wld (c, elt) = 
           case elt of
-            'P' -> wld{wWorker    = c}
-            'o' -> wld{wBoxes    = c:wBoxes wld}
-            '#' -> wld{wWalls     = c:wWalls wld}
-            '.' -> wld{wStorages  = c:wStorages wld} 
-            '*' -> wld{wBoxes    = c:wBoxes wld
-                      ,wStorages  = c:wStorages wld}
-            'p' -> wld{wStorages  = c:wStorages wld
-                      ,wWorker    = c}
+            'P' -> wld{wWorker      = c}
+            'o' -> wld{wBoxes       = c:wBoxes wld}
+            '#' -> wld{wWalls       = c:wWalls wld}
+            '.' -> wld{wStorages    = c:wStorages wld} 
+            '*' -> wld{wBoxes       = c:wBoxes wld
+                      ,wStorages    = c:wStorages wld}
+            'p' -> wld{wStorages    = c:wStorages wld
+                      ,wWorker      = c}
             ' ' -> wld
-            otherwise -> error (show elt ++ " not recognized")
+            otherwise -> error (show elt ++ " error")
 
 --funcion principal, modifica el mapa en cada movimiento del jugador
 modifyMap :: Map -> Input -> Maybe Map
