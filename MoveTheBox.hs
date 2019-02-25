@@ -2,12 +2,14 @@ import Prelude hiding (Either(..))
 import System.IO  (stdin, stdout, hSetEcho, hSetBuffering
                   ,BufferMode(..))
 import Control.Monad (forM_, liftM)    
-import Data.List (sort, delete, unfoldr)           
+import Data.List (sort, delete, unfoldr)  
+-- import System.Exit
 
 data Input  = Up 
             | Down 
             | Left 
             | Right
+            -- | Exit
             deriving (Show, Eq, Ord)
 
 type Coord = (Int, Int)
@@ -50,6 +52,7 @@ getInput = do
     'a' -> return Left
     's' -> return Down
     'd' -> return Right
+    -- 'q' -> return Exit
     otherwise -> getInput
 
 add :: Coord -> Input -> Coord
@@ -113,6 +116,7 @@ modifyMap map input
       if isBox map newPos' || isWall map newPos'
         then Nothing
         else return $ moveCrate map' newPos newPos'
+  -- | isRestart map input = return map  -- deberia recargar el juego desde principio. Chequear
   | otherwise               = return map'
   where moveCrate w old new = w{wBoxes = new:delete old (wBoxes w)}
         
