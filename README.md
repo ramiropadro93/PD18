@@ -1,4 +1,3 @@
-# PD18
 # Trabajo Final: Programación Declarativa UBP 2019
 
 ## Descripcion del proyecto
